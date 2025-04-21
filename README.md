@@ -31,6 +31,6 @@
  📫 Let's Connect!
 - 📧 amirthad1225@gmail.com  
 - 🔗 [LinkedIn](https://www.linkedin.com/in/amirtha-thennavan-b6b5962a7)  
-- 🌐 Portfolio coming soon!
+
 
  “Code with purpose. Learn with passion. Grow with curiosity.” 🚀  
