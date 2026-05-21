@@ -9,15 +9,12 @@
 🛠️ Tech Stack
 - Languages: Python,SQL  
 - AI/ML Frameworks: TensorFlow, PyTorch, Scikit-learn, Keras  
-- Data: Pandas, NumPy, Matplotlib, Seaborn  
-- NLP & CV: HuggingFace Transformers, OpenCV, NLTK  
-- Dev Tools: VS Code, GitHub, Jupyter, Streamlit, FastAPI  
+- Data: Pandas, NumPy, Matplotlib 
+- Dev Tools: VS Code, GitHub, Antigravity
 
 📌 Projects I'm Proud Of
 - 🧠 YouTube AI Comment Moderator– NLP tool that flags & removes harassment comments  
-- 🌙 Lunar Crater Detection– Uses YOLOv12 to detect and measure craters in lunar images  
 - 🧘‍♀️ SereneMind– AI Assistant for monitoring stress and sleep patterns  
-- 🕵️‍♀️ Phishing URL Detector & Dark Web Monitoring– CyberShield tools for online safety  
 
  🧑‍💻 Internships
 - 🔍 Wheels India Ltd– ML & data science intern in the R&D department   
@@ -25,7 +22,6 @@
  🌱 Currently Exploring
 - 📚 Advanced Deep Learning: RNNs, GANs, Transformers  
 - 🧪 Building full-stack AI web apps with Flask & Streamlit  
-- 🧑‍🏫 Preparing for M.Tech and industry-ready interviews
 
  📫 Let's Connect!
 - 📧 amirthad1225@gmail.com  
