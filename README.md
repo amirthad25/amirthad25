@@ -1,17 +1,17 @@
 👋 Hi there, I'm Amirtha!
 
-🎓 Final Year B.Tech Student in Artificial Intelligence & Data Science  
+🎓 B.Tech Graduate in Artificial Intelligence & Data Science
+🎓 M.Tech Student in Big Data Analytics
 🏫 Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology  
 🔍 Passionate about Machine Learning,Data Science, NLP, Generative AI, and Cybersecurity  
 💡 I love building real-world projects that make tech useful, ethical, and impactful.
 
 🛠️ Tech Stack
-- Languages: Python, C++, C, Basic SQL  
+- Languages: Python,SQL  
 - AI/ML Frameworks: TensorFlow, PyTorch, Scikit-learn, Keras  
 - Data: Pandas, NumPy, Matplotlib, Seaborn  
 - NLP & CV: HuggingFace Transformers, OpenCV, NLTK  
 - Dev Tools: VS Code, GitHub, Jupyter, Streamlit, FastAPI  
-- Other: Linux, Windows, Agile Methodology
 
 📌 Projects I'm Proud Of
 - 🧠 YouTube AI Comment Moderator– NLP tool that flags & removes harassment comments  
@@ -20,8 +20,7 @@
 - 🕵️‍♀️ Phishing URL Detector & Dark Web Monitoring– CyberShield tools for online safety  
 
  🧑‍💻 Internships
-- 🔍 Wheels India Ltd– ML & data science intern in the R&D department  
-- 🌐 Coincent– Live industrial training in AI & Data Science  
+- 🔍 Wheels India Ltd– ML & data science intern in the R&D department   
 
  🌱 Currently Exploring
 - 📚 Advanced Deep Learning: RNNs, GANs, Transformers  
