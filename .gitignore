@@ -1,0 +1,18 @@
+# Source brief used to build this profile. Kept out of the public repo - it
+# contains working notes and unverified-item checklists that are not part of
+# the published profile. Remove this line to version it.
+AMIRTHA_AI_GITHUB_CONTENT_PACK.md
+
+# Data-driven assets are published to the `assets-output` branch by
+# .github/workflows/generated-assets.yml, not committed to the default branch.
+# Keeping them off main is what stops the daily refresh commit from counting
+# as a GitHub contribution and inflating the graph that activity.svg renders.
+assets/activity.svg
+assets/analytics.svg
+
+# Never commit credentials. Nothing here reads a .env file - the token is
+# supplied through the shell environment only.
+.env
+.env.*
+
+node_modules/

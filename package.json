@@ -1,0 +1,27 @@
+{
+  "name": "amirtha-ai-profile",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AMIRTHA AI \u2014 GitHub profile laboratory. SVG assets generated from a single design system.",
+  "scripts": {
+    "fonts:fetch": "node tools/fetch-fonts.mjs",
+    "fonts:build": "node tools/build-fonts.mjs",
+    "build:spec": "node tools/build-spec-sheet.mjs",
+    "build:hero": "node tools/build-hero.mjs",
+    "build:footer": "node tools/build-footer.mjs",
+    "build": "npm run build:hero && npm run build:core && npm run build:lab && npm run build:training && npm run build:research && npm run build:terminal && npm run build:footer",
+    "build:core": "node tools/build-neural-core.mjs",
+    "build:lab": "node tools/build-ai-model-lab.mjs",
+    "build:activity": "node tools/build-activity.mjs",
+    "build:analytics": "node tools/build-analytics.mjs",
+    "build:data": "npm run build:activity && npm run build:analytics",
+    "build:training": "node tools/build-currently-training.mjs",
+    "build:research": "node tools/build-research-lab.mjs",
+    "build:terminal": "node tools/build-terminal.mjs",
+    "check:api": "node tools/check-api.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

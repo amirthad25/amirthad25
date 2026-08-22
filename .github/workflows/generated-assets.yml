@@ -1,0 +1,80 @@
+name: generated assets
+
+# Regenerates the data-driven assets (contribution stream + developer
+# analytics) from live GitHub data.
+#
+# Generated assets are published to the `assets-output` branch, NOT to the
+# default branch. That is not a tidiness preference — GitHub counts commits to
+# the default branch as contributions, so a daily bot commit on `main` would
+# add ~365 synthetic contributions a year to the very graph this asset renders.
+# Committing to a non-default branch keeps the contribution data honest.
+
+on:
+  schedule:
+    - cron: '0 0 * * *'      # daily, 00:00 UTC
+  workflow_dispatch:          # manual refresh without waiting for the schedule
+  push:
+    branches: [main]
+    paths:
+      - 'tools/**'
+      - '.github/workflows/generated-assets.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generated-assets
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # No dependencies to install — the generators are plain Node ESM.
+      - name: Build data-driven assets
+        env:
+          # Authenticated GraphQL is the authoritative source; the fetcher falls
+          # back to the public calendar endpoint if this is ever unavailable.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_LOGIN: ${{ github.repository_owner }}
+        run: |
+          node tools/build-activity.mjs
+          node tools/build-analytics.mjs
+
+      - name: Publish to assets-output
+        run: |
+          set -euo pipefail
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Only the two data-driven assets are published here. The seven
+          # static sections live on the default branch and never change on a
+          # schedule, so copying them would add pointless churn.
+          mkdir -p "$RUNNER_TEMP/out"
+          cp assets/activity.svg assets/analytics.svg "$RUNNER_TEMP/out/"
+
+          if git ls-remote --exit-code --heads origin assets-output >/dev/null 2>&1; then
+            git fetch origin assets-output
+            git checkout assets-output
+          else
+            git checkout --orphan assets-output
+            git rm -rf . >/dev/null 2>&1 || true
+          fi
+
+          mkdir -p assets
+          cp "$RUNNER_TEMP/out"/*.svg assets/
+          git add assets
+
+          if git diff --staged --quiet; then
+            echo "No change in generated assets."
+          else
+            git commit -m "assets: refresh live GitHub data ($(date -u +%F))"
+            git push origin assets-output
+          fi
